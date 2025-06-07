@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>101 razones por las que me gustas Luana</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f0ff;
+      color: #3c004b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      color: #800080;
+    }
+    .reason-box {
+      background-color: #fff0ff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(128, 0, 128, 0.2);
+      max-width: 600px;
+      font-size: 1.2rem;
+      margin: 1rem;
+    }
+    .buttons {
+      margin-top: 1rem;
+    }
+    button {
+      background-color: #800080;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      margin: 0 0.5rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #a000a0;
+    }
+  </style>
+</head>
+<body>
+  <h1>101 razones por las que me gustas Luana</h1>
+  <div class="reason-box" id="reason">1. Eres muy transparente</div>
+  <div class="buttons">
+    <button onclick="prevReason()">Anterior</button>
+    <button onclick="nextReason()">Siguiente</button>
+  </div> <script>
+    const reasons = [
+      "1. Eres muy transparente",
+      "2. Me gusta biología solo porque puedo verte aunque no pueda ni hablarte",
+      "3. Te gustan los kebabs (ya juegas en otra liga)",
+      "4. Haces notar a la gente que aprecias",
+      "5. Muy sincera",
+      "6. Preciosa",
+      "7. Eres muy alegre",
+      "8. No eres superficial",
+      "9. Estás aprendiendo darija y aunque yo tampoco sepa mucho te podría enseñar 😉😉",
+      "10. Tienes claro tu futuro",
+      "11. Graciosa y divertida",
+      "12. Muy natural",
+      "13. Madura a mi parecer",
+      "14. Te encanta viajar",
+      "15. Brasileña",
+      "16. Cuando quieres o te gusta algo te esfuerzas por ello",
+      "17. Te preocupas por los demás",
+      "18. Haces ballet",
+      "19. Amplio gusto musical, escuchas de todos como Babi, Morad, Beny Jr o Yung Beef",
+      "20. Buena persona",
+      "21. Te importa lo que pasa en el mundo",
+      "22. No te importa mostrarte tal y como eres",
+      "23. Me encantan tus ojos y tu sonrisa y tú entera",
+      "24. Te gusta aprender idiomas",
+      "25. Tienes estilo",
+      "26. Intentas dar lo mejor de ti",
+      "27. Tu voz",
+      "28. No me imagino mi vida sin ti",
+      "29. Eres comunista",
+      "30. Me motivas a seguir mis sueños",
+      "31. Me haces sentir afortunado aunque no te haya ni hablado",
+      "32. Cuidas tus amistades cercanas y se nota",
+      "33. Siempre estás presente en mi mente",
+      "34. Me haces feliz",
+      "35. Me recuerdas a Mulan con el pelo liso aunque tú digas que te pareces más a Moana",
+      "36. Y encima médico (cirujana creo)",
+      "37. Eres mi tipo",
+      "38. Buscas un concepto de amor a la antigua y que no todo sea superficial",
+      "39. Como tú misma dijiste, me tocó la lotería enamorándome de ti",
+      "40. Eres el amor con el que siempre soñé",
+      "41. Todas las noches que me paso soñando contigo frente al atardecer, frente al mar, en Marruecos son la mejor parte del día",
+      "42. Me encanta tu voz",
+      "43. Nti zwina❤️ (a ver si lo entiendes)",
+      "44. Me encantan tus rizos",
+      "45. No me imagino una vida sin ti",
+      "46. Te gusta la playa",
+      "47. Eres sensible",
+      "48. Me recuerdas a un atardecer",
+      "49. Te haces la dura pero se nota que no todo te da igual como dices",
+      "50. Habrás notado que soy un poquito pesado viendo tus perfiles pero es que me encantas, perdona 😭",
+      "51. La vida sin ti no tendría sentido",
+      "52. Vas a Marruecos ya 2 años seguidos, eso no cualquiera lo hace",
+      "53. Estilazo",
+      "54. No eres pick me",
+      "55. La ilusión por cada video compartido en TikTok es mejor que cualquier sensación en este mundo",
+      "56. Con muy poco me haces feliz",
+      "57. Una cosa tan simple como tus uñas me encantan",
+      "58. Aunque no sepa la vida que tienes creo que eres muy feliz",
+      "59. Chica inteligente",
+      "60. Sabes lo que quieres en la vida",
+      "61. Valiente y no te avergüenzas por demostrar lo que sientes",
+      "62. Me encanta lo curiosa que eres",
+      "63. Me da paz solo pensar en ti",
+      "64. Ha sido el mejor año de mi vida gracias a ti",
+      "65. Eres muy activa en cuanto a lo social",
+      "66. Te gusta bailar (como dijo Bad Bunny: enséñame a bailar)",
+      "67. No puedo explicarte la sensación que siento en el corazón pensando en ti",
+      "68. Leal",
+      "69. No sé qué haría sin ti",
+      "70. Das tu opinión y te la suda la opinión de los demás y eso se aprecia",
+      "71. Me das muchísima ternura como cuando hiciste el vídeo study core, monísima",
+      "72. Te gustan los niños",
+      "73. Eres muy natural tanto de personalidad como estéticamente",
+      "74. Espero que para el próximo 3 de diciembre tengas mi sudadera",
+      "75. Te gustan los tulipanes morados",
+      "76. Eres exclusiva",
+      "77. Muy curiosa con otras culturas",
+      "78. Te gusta Marruecos",
+      "79. Verte bailar (ojalá algún día)",
+      "80. Ballet sí es un deporte",
+      "81. Tus videos así más íntimos son lo mejor, como el de haciéndote los rizos",
+      "82. Tu pelo rizado o liso es lo mejor",
+      "83. Te escucharía hablar en cualquier idioma",
+      "84. Me gustas por fuera pero por dentro es inimaginable lo que siento por ti",
+      "85. Kanbghik",
+      "86. Me transmites calma aún viéndote de lejos en clase",
+      "87. Con solo verte la cara me transmites más que cualquier mujer desnuda",
+      "88. De los pocos dibujos que te he visto me parecen los más bonitos porque más que un dibujo para mí es una emoción de amor",
+      "89. Me paso los findes esperando que llegue el lunes para verte esas 2 horas seguidas y merece la pena",
+      "90. Eres mi mejor pensamiento",
+      "91. Me gustas sin necesitar razones complicadas",
+      "92. Eres más guapa que todas las mujeres del mundo",
+      "93. Se te ve que cuidas lo que quieres",
+      "94. Das unas vibras muy alegres",
+      "95. Te preocupas más por los demás que por ti misma",
+      "96. Intentas que tu círculo de amigos esté bien aunque te pase factura a ti",
+      "97. Aunque pueda sonar superficial pero es que tienes un cuerpazo",
+      "98. Me encantaría saber de ti, charlar, comer pipas, estar uno con el otro y ver el atardecer",
+      "99. Siempre intentas mejorar",
+      "100. Me gustas aunque no te conozca bien",
+      "101. Me hace muy feliz verte bien"
+    ];
+
+    let index = 0;
+    const reasonDiv = document.getElementById("reason");
+
+    function updateReason() {
+      reasonDiv.textContent = reasons[index];
+    }
+
+    function nextReason() {
+      if (index < reasons.length - 1) {
+        index++;
+        updateReason();
+      }
+    }
+
+    function prevReason() {
+      if (index > 0) {
+        index--;
+        updateReason();
+      }
+    }
+  </script></body>
+</html>
